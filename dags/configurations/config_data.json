@@ -1,0 +1,228 @@
+{
+	"ft_balance_f":
+		{
+			"filename": "ft_balance_f.csv",
+			"table": "ft_balance_f",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"currency_rk",
+                "account_rk"
+			],
+               "date_formats": [
+				{
+					"column_name": "on_date",
+					"type": "date",
+					"format": "%d.%m.%Y"
+				}
+               ],
+               "float_columns_to_cast": [
+				{
+					"column_name": "balance_out",
+					"separator": "."
+				}
+			],
+               "rename_columns": {
+                    "ON_DATE": "on_date",
+                    "ACCOUNT_RK": "account_rk", 
+                    "CURRENCY_RK": "currency_rk", 
+                    "BALANCE_OUT": "balance_out"
+               }
+		},
+        "ft_posting_f": {
+			"filename": "ft_posting_f.csv",
+			"table": "ft_posting_f",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"credit_account_rk",
+                 "debet_account_rk"
+			],
+               "date_formats": [
+				{
+					"column_name": "oper_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				}
+               ],
+               "float_columns_to_cast": [
+				{
+					"column_name": "credit_amount",
+					"separator": "."
+				},
+                {
+					"column_name": "debet_amount",
+					"separator": "."
+				}
+			],
+               "rename_columns": {
+                    "Unnamed: 0": "id",
+                    "OPER_DATE": "oper_date",
+                    "CREDIT_ACCOUNT_RK": "credit_account_rk", 
+                    "DEBET_ACCOUNT_RK": "debet_account_rk", 
+                    "CREDIT_AMOUNT": "credit_amount",
+                    "DEBET_AMOUNT": "debet_amount"
+               }
+		},
+        "md_account_d": {
+			"filename": "md_account_d.csv",
+			"table": "md_account_d",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"account_rk",
+				"currency_rk"
+			],
+               "date_formats": [
+				{
+					"column_name": "data_actual_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				},
+				{
+					"column_name": "data_actual_end_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				}
+               ],
+               "rename_columns": {
+                    "DATA_ACTUAL_DATE": "data_actual_date",
+                    "DATA_ACTUAL_END_DATE": "data_actual_end_date",
+                    "ACCOUNT_RK": "account_rk", 
+                    "ACCOUNT_NUMBER": "account_number", 
+                    "CHAR_TYPE": "char_type",
+                    "CURRENCY_RK": "currency_rk",
+					"CURRENCY_CODE": "currency_code"
+               }
+		},
+        "md_currency_d": {
+			"filename": "md_currency_d.csv",
+			"table": "md_currency_d",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"currency_rk"
+			],
+               "date_formats": [
+				{
+					"column_name": "data_actual_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				},
+				{
+					"column_name": "data_actual_end_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				}
+               ],
+               "rename_columns": {
+                    "CURRENCY_RK": "currency_rk",
+                    "DATA_ACTUAL_DATE": "data_actual_date",
+                    "DATA_ACTUAL_END_DATE": "data_actual_end_date", 
+                    "CURRENCY_CODE": "currency_code", 
+                    "CODE_ISO_CHAR": "code_iso_char"
+               }
+		},
+        "md_exchange_rate_d": {
+			"filename": "md_exchange_rate_d.csv",
+			"table": "md_exchange_rate_d",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"currency_rk"
+			],
+               "date_formats": [
+				{
+					"column_name": "data_actual_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				},
+				{
+					"column_name": "data_actual_end_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				}
+               ],
+               "float_columns_to_cast": [
+				{
+					"column_name": "reduced_cource",
+					"separator": "."
+				}
+			],
+               "rename_columns": {
+					"   ": "id",
+                    "DATA_ACTUAL_DATE": "data_actual_date",
+                    "DATA_ACTUAL_END_DATE": "data_actual_end_date", 
+                    "CURRENCY_RK": "currency_rk", 
+                    "REDUCED_COURCE": "reduced_cource",
+                    "CODE_ISO_NUM": "code_iso_num"
+               }
+		},
+        "md_ledger_account_s": {
+			"filename": "md_ledger_account_s.csv",
+			"table": "md_ledger_account_s",
+			"options": {
+				"delimiter": ";"
+			},
+               "int_columns_to_cast": [
+				"section_number",
+				"ledger1_account",
+				"ledger_account",
+				"is_resident",
+				"is_reserve",
+				"is_reserved",
+				"is_loan",
+				"is_reserved_assets",
+				"is_overdue",
+				"is_interest",
+				"is_rub_only"
+			],
+               "date_formats": [
+				{
+					"column_name": "start_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				},
+				{
+					"column_name": "end_date",
+					"type": "date",
+					"format": "%Y-%m-%d"
+				}
+               ],
+               "rename_columns": {
+					"CHAPTER": "chapter",
+                    "CHAPTER_NAME": "chapter_name",
+                    "SECTION_NUMBER": "section_number", 
+                    "SECTION_NAME": "section_name", 
+                    "SUBSECTION_NAME": "subsection_name",
+                    "LEDGER1_ACCOUNT": "ledger1_account",
+					"LEDGER1_ACCOUNT_NAME": "ledger1_account_name",
+					"LEDGER_ACCOUNT": "ledger_account",
+					"LEDGER_ACCOUNT_NAME": "ledger_account_name",
+					"CHARACTERISTIC": "characteristic",
+					"IS_RESIDENT": "is_resident",
+					"IS_RESERVE": "is_reserve",
+					"IS_RESERVED": "is_reserved",
+					"IS_LOAN": "is_loan",
+					"IS_RESERVED_ASSETS": "is_reserved_assets",
+					"IS_OVERDUE": "is_overdue",
+					"IS_INTEREST": "is_interest",
+					"PAIR_ACCOUNT": "pair_account",
+					"START_DATE": "start_date",
+					"END_DATE": "end_date",
+					"IS_RUB_ONLY": "is_rub_only",
+					"MIN_TERM": "min_term",
+					"MIN_TERM_MEASURE": "min_term_measure",
+					"MAX_TERM": "max_term",
+					"MAX_TERM_MEASURE": "max_term_measure",
+					"LEDGER_ACC_FULL_NAME_TRANSLIT": "ledger_acc_full_name_translit",
+					"IS_REVALUATION": "is_revaluation",
+					"IS_CORRECT": "is_correct"
+               }
+		}
+}
