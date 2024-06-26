@@ -2,19 +2,16 @@ from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
-from os import getenv
 from datetime import datetime
 
-AIRFLOW_HOME = getenv('AIRFLOW_HOME', '~/airflow')
-DAG_ID = "db_init"
 
+DAG_ID = "db_init"
 
 default_args = {
     "owner": 'chernitskaia',
     "start_date" : datetime(2024, 6, 12),
     "retries": 1
 }
-
 
 with DAG(dag_id=DAG_ID,
     description='Dag to create schemas and tables',

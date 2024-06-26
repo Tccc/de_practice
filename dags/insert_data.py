@@ -1,6 +1,4 @@
 import sys
-import json
-import os
 from pathlib import Path
 
 from airflow import DAG
@@ -15,10 +13,8 @@ DAG_ID = 'upsert_data'
 self_path = str(Path(__file__).parent.absolute())
 sys.path.append(self_path)
 
-print(self_path)
-#credentialsPath = os.path.expanduser("files/config_data.json")
-
 def read_json(filepath):
+    import json
     f = open(filepath)
     data = json.load(f)
     f.close()
