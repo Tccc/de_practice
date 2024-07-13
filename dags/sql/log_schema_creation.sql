@@ -9,3 +9,16 @@ CREATE TABLE IF NOT EXISTS logs.task_loading_logs (
     step VARCHAR(50),
     status VARCHAR(50)
 );
+
+CREATE TABLE IF NOT EXISTS dm.lg_messages (
+    record_id serial,
+	date_time timestamp,
+	pid int,
+	"message" text,
+	message_type text,
+	usename text, 
+	datname text, 
+	client_addr text, 
+	application_name text,
+	backend_start timestamp
+);

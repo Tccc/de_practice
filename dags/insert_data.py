@@ -2,9 +2,9 @@ import sys
 from pathlib import Path
 
 from airflow import DAG
-from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 
 from datetime import datetime
 
@@ -126,7 +126,7 @@ with DAG (
     schedule="@once"
 ) as dag:
     
-    start = DummyOperator(
+    start = EmptyOperator(
         task_id="start"
     )
 
@@ -154,7 +154,7 @@ with DAG (
         op_kwargs={"table_name":"md_currency_d"}
     )
 
-    plug = DummyOperator(
+    plug = EmptyOperator(
         task_id = "plug"
     )
 
@@ -170,7 +170,7 @@ with DAG (
         op_kwargs={"table_name":"md_ledger_account_s"}
     )
 
-    end = DummyOperator(
+    end = EmptyOperator(
         task_id = "end"
     )
 

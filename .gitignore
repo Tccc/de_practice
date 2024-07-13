@@ -13,3 +13,4 @@ plugins
 config
 docker-compose.yaml
 __pycache__
+send_email.py
